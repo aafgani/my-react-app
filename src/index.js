@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 // import App from './App';
 import reportWebVitals from "./reportWebVitals";
-import Exercise201 from "./Exercise/Exercise201";
+import Exercise302 from "./Exercise/Exercise302";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Exercise201 />
+    <Exercise302 />
   </React.StrictMode>
 );
 
