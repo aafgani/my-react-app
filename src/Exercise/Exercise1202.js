@@ -66,7 +66,7 @@ const UserNameForm = () => {
 const Exercise1202 = () => {
   return (
     <div className="App">
-      <h1>{process.env.REACT_APP_NOT_SECRET_CODE} Sample Form</h1>
+      <h1>Sample Form</h1>
       <UserNameForm />
     </div>
   );
