@@ -5,6 +5,7 @@ import {
   Route,
   useLocation,
   Link,
+  useMatch,
 } from "react-router-dom";
 
 const Search = () => {
@@ -73,13 +74,34 @@ const Contact = () => (
   </div>
 );
 
-const About = () => (
-  <div className="About">
-    <h1>About Page</h1>
-    <hr />
-    <p>Information about your app or who you are would go here.</p>
-  </div>
-);
+const About = () => {
+  const { path, url } = useMatch();
+
+  return (
+    <Router>
+      <div className="About">
+        <h1>About Page</h1>
+        <hr />
+        <p>Information about your app or who you are would go here!</p>
+        <hr />
+        <Link to={`${url}`}>About Home</Link>
+        &nbsp;
+        <Link to={`${url}/contact`}>Contact</Link>
+        &nbsp;
+        <Link to={`${url}/bio`}>Bio</Link>
+        <hr />
+        <Routes>
+          <Route path={`${path}/contact`}>
+            <Contact />
+          </Route>
+          <Route path={`${path}/bio`}>
+            <Bio />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
 // const About = () => {
 //     return (
